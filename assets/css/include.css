@@ -1,0 +1,127 @@
+html {
+  font-size: 10px;
+}
+
+.header-inner {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+.header-inner .header-top {
+  width: 100%;
+  height: 4.2rem;
+  background: #222222;
+}
+.header-inner .header-top ul {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4.2rem;
+}
+.header-inner .header-top ul li a {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+.header-inner .header-top ul li ::before {
+  content: url(../images/include/mini_logo.png);
+  margin-right: 3px;
+}
+.header-inner .gnb-wrap {
+  width: 100%;
+  background: #ffffff;
+}
+.header-inner .gnb-wrap .gnb {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 8.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header-inner .gnb-wrap .gnb .logo {
+  width: 8.7rem;
+  height: 2.9rem;
+  margin-right: 5.5rem;
+}
+.header-inner .gnb-wrap .gnb .logo a img {
+  height: 100%;
+}
+.header-inner .gnb-wrap .gnb nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 7.6rem;
+}
+.header-inner .gnb-wrap .gnb nav ul li a {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 500;
+  font-size: 2rem;
+  color: #222222;
+}
+.header-inner .gnb-wrap .gnb .assist {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 3.8rem;
+  height: 3.8rem;
+}
+.header-inner .gnb-wrap .gnb .assist button {
+  background: transparent;
+  border: none;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 500;
+  font-size: 2rem;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-inner .gnb-wrap .gnb .assist .language::before {
+  content: url(../images/include/language_icon.png);
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+}
+.header-inner .gnb-wrap .gnb .assist .search::before {
+  content: url(../images/include/search_icon.png);
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+}
+.header-inner .header-bottom {
+  width: 100%;
+  height: 4.8rem;
+  background: #ffffff;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-inner .header-bottom ul {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+.header-inner .header-bottom ul li a {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #AAAAAA;
+}
+.header-inner .header-bottom ul li:nth-of-type(1) a {
+  font-weight: 700;
+  color: #222222;
+}/*# sourceMappingURL=include.css.map */

@@ -1,0 +1,29 @@
+#talent {
+  position: relative;
+  width: 100%;
+  padding-top: 17.4rem;
+  background: #F4F4F4;
+  z-index: 0;
+}
+#talent .talent-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+#talent .talent-inner strong {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: #222222;
+}
+#talent .talent-inner p {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #393939;
+}
+#talent .talent-inner .contents {
+  width: 122rem;
+  height: 50rem;
+}/*# sourceMappingURL=main.css.map */
