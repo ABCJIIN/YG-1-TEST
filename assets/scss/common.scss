@@ -1,4 +1,33 @@
 $white: #ffffff;
 $black: #000000;
 $gray: #F4F4F4;
+$red: #ED1C24;
 $spoqa: 'Spoqa Han Sans Neo', 'sans-serif';
+
+
+// 노트북
+@mixin notebook {
+    @media (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin tablet_junction{
+    @media (max-width: 900px){
+        @content;
+    }
+}
+
+// 테블릿
+@mixin tablet{
+    @media (max-width: 768px){
+        @content;
+    }
+}
+
+// 모바일
+@mixin mobile{
+    @media (max-width: 390px){
+        @content;
+    }
+}
