@@ -1,12 +1,15 @@
 @import "common";
+
 @mixin background ($folder: folder_name, $img: file, $type: png, $repeat:no-repeat, $x:0, $y:0) {
     background-image: url(/assets/images/#{$folder}/#{$img}.#{$type});
     background-repeat: #{$repeat};
     background-position: #{$x} #{$y};
 }
-html {
-    font-size: 10px;
-}
+
+// html {
+//     font-size: 10px;
+//     @include notebook{font-size: 8px;}
+// }
 
 // header
 
