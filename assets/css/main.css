@@ -1,9 +1,14 @@
 html {
   font-size: 10px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1150px) {
   html {
     font-size: 8px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 10px;
   }
 }
 
@@ -23,37 +28,18 @@ html {
   background: url(../images/main/talent_4.png) no-repeat center/cover;
 }
 
-#Recruit .process ul li:nth-of-type(1) div {
-  background: #ffffff url(../images/main/recruit_num_1.png) no-repeat 95% 100%;
-}
-
-#Recruit .process ul li:nth-of-type(2) div {
-  background: #ffffff url(../images/main/recruit_num_2.png) no-repeat 95% 100%;
-}
-
-#Recruit .process ul li:nth-of-type(3) div {
-  background: #ffffff url(../images/main/recruit_num_3.png) no-repeat 95% 100%;
-}
-
-#Recruit .process ul li:nth-of-type(4) div {
-  background: #ffffff url(../images/main/recruit_num_4.png) no-repeat 95% 100%;
-}
-
-#Recruit .process ul li:nth-of-type(5) div {
-  background: #ffffff url(../images/main/recruit_num_5.png) no-repeat 95% 100%;
-}
-
-#Recruit .process ul li:nth-of-type(6) div {
-  background: #ffffff url(../images/main/recruit_num_6.png) no-repeat 95% 100%;
-}
-
 #talent {
   position: relative;
   width: 100%;
-  padding-top: 17.4rem;
+  padding-top: 27.4rem;
   background: #F4F4F4;
   z-index: 0;
   overflow: hidden;
+}
+@media (max-width: 768px) {
+  #talent {
+    padding-top: 22rem;
+  }
 }
 #talent .talent-inner {
   max-width: 1440px;
@@ -65,6 +51,12 @@ html {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  #talent .talent-inner {
+    width: calc(100% - 4rem);
+    padding: 0 2rem;
+  }
+}
 #talent .talent-inner strong {
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-weight: 900;
@@ -74,8 +66,12 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 9rem;
   margin-bottom: 2.8rem;
+}
+@media (max-width: 768px) {
+  #talent .talent-inner strong {
+    font-size: 2rem;
+  }
 }
 #talent .talent-inner strong::after {
   content: "";
@@ -85,17 +81,30 @@ html {
   background: #ED1C24;
   margin-top: 0.7rem;
 }
-#talent .talent-inner p {
+#talent .talent-inner .title {
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-weight: 500;
   font-size: 1.6rem;
   color: #393939;
   margin-bottom: 7.5rem;
+  word-break: keep-all;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  #talent .talent-inner .title {
+    font-size: 1.5rem;
+    margin-bottom: 3.3rem;
+  }
 }
 #talent .talent-inner .contents {
-  width: 122rem;
-  height: 50rem;
+  max-width: 1220px;
+  width: 100%;
   margin-bottom: 10rem;
+}
+@media (max-width: 768px) {
+  #talent .talent-inner .contents {
+    margin-bottom: 6rem;
+  }
 }
 #talent .talent-inner .contents ul {
   width: 100%;
@@ -103,37 +112,88 @@ html {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1.2rem;
+}
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul {
+    flex-direction: column;
+  }
 }
 #talent .talent-inner .contents ul li {
   width: 29.6rem;
-  height: 42rem;
+}
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li {
+    width: 100%;
+    height: auto;
+  }
 }
 #talent .talent-inner .contents ul li div {
+  position: relative;
+  padding-top: 35.5rem;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
   gap: 0.6rem;
+  border-radius: 0.8rem;
+  word-break: keep-all;
 }
-#talent .talent-inner .contents ul li div span {
+@media (max-width: 950px) {
+  #talent .talent-inner .contents ul li div {
+    padding-top: 30rem;
+  }
+}
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li div {
+    padding-top: 12.8rem;
+    gap: 0;
+  }
+}
+#talent .talent-inner .contents ul li div .sub-title {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li div .sub-title {
+    flex-direction: row;
+    align-items: baseline;
+    padding-bottom: 1.2rem;
+  }
+}
+#talent .talent-inner .contents ul li div .sub-title span {
   color: #ffffff;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
-  padding-left: 1.6rem;
 }
-#talent .talent-inner .contents ul li div span:nth-of-type(1) {
+#talent .talent-inner .contents ul li div .sub-title span:nth-of-type(1) {
   font-size: 2rem;
   font-weight: 900;
 }
-#talent .talent-inner .contents ul li div span:nth-of-type(2) {
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li div .sub-title span:nth-of-type(1) {
+    font-size: 1.8rem;
+  }
+}
+#talent .talent-inner .contents ul li div .sub-title span:nth-of-type(2) {
   font-size: 1.6rem;
   font-weight: 500;
   padding-bottom: 2rem;
 }
-#talent .talent-inner .contents ul li div span:nth-of-type(2)::before {
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li div .sub-title span:nth-of-type(2) {
+    font-size: 1.4rem;
+    padding-bottom: 0;
+  }
+}
+#talent .talent-inner .contents ul li div .sub-title span:nth-of-type(2)::before {
   content: "";
   display: inline-block;
   width: 1.2rem;
@@ -142,23 +202,59 @@ html {
   margin-bottom: 0.5rem;
   margin-right: 0.8rem;
 }
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li div .sub-title span:nth-of-type(2)::before {
+    position: absolute;
+    left: 1.7rem;
+    bottom: 0;
+    width: 0.2rem;
+    height: 1.2rem;
+    margin: 0;
+  }
+}
 #talent .talent-inner .contents ul li div .mb_text {
   display: none;
+}
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li div .mb_text {
+    display: block;
+    color: #ffffff;
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    line-height: 1.5;
+  }
 }
 #talent .talent-inner .contents ul li:nth-of-type(2) div {
   margin-top: 8rem;
 }
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li:nth-of-type(2) div {
+    margin-top: 0;
+  }
+}
 #talent .talent-inner .contents ul li:nth-of-type(4) div {
   margin-top: 8rem;
+}
+@media (max-width: 768px) {
+  #talent .talent-inner .contents ul li:nth-of-type(4) div {
+    margin-top: 0;
+  }
 }
 
 #wanted {
   width: 100%;
-  height: 47.1rem;
+  padding: 12rem 0;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/main/better_life_bg.png) no-repeat center/cover;
+}
+@media (max-width: 768px) {
+  #wanted {
+    padding: 10rem 0;
+  }
 }
 #wanted .wanted-container {
   max-width: 1440px;
@@ -170,6 +266,14 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  word-break: keep-all;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  #wanted .wanted-container {
+    width: calc(100% - 4rem);
+    padding: 0 2rem;
+  }
 }
 #wanted .wanted-container strong {
   color: #ffffff;
@@ -178,19 +282,31 @@ html {
   font-weight: 900;
   margin-bottom: 1rem;
 }
+@media (max-width: 768px) {
+  #wanted .wanted-container strong {
+    font-size: 2.4rem;
+  }
+}
 #wanted .wanted-container p:nth-of-type(1) {
   color: #ffffff;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-size: 2.4rem;
   font-weight: 900;
   margin-bottom: 4.3rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  #wanted .wanted-container p:nth-of-type(1) {
+    font-size: 2rem;
+    margin-bottom: 2.1rem;
+    text-align: center;
+  }
 }
 #wanted .wanted-container p:nth-of-type(2) {
   color: #ffffff;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-size: 1.6rem;
   font-weight: 500;
-  text-align: center;
   line-height: 1.5;
 }
 
@@ -216,6 +332,12 @@ html {
   margin-top: 14rem;
   margin-bottom: 6rem;
 }
+@media (max-width: 768px) {
+  #welfare strong {
+    margin-top: 7.5rem;
+    margin-bottom: 3.6rem;
+  }
+}
 #welfare strong::after {
   content: "";
   display: inline-block;
@@ -231,26 +353,54 @@ html {
   margin: 0 auto;
   margin-bottom: 23.8rem;
 }
+@media (max-width: 768px) {
+  #welfare .welfare-contents {
+    width: calc(100% - 4rem);
+    padding: 0 2rem;
+    margin-bottom: 8rem;
+  }
+}
 #welfare .welfare-contents ul {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-#welfare .welfare-contents ul li:nth-child(odd) {
+@media (max-width: 768px) {
+  #welfare .welfare-contents ul {
+    gap: 1rem;
+  }
+}
+#welfare .welfare-contents ul .web-g {
   background: #F4F4F4;
 }
-#welfare .welfare-contents ul li:nth-child(even) {
+#welfare .welfare-contents ul .web-w {
   background: #ffffff;
+}
+@media (max-width: 768px) {
+  #welfare .welfare-contents ul .mb-g {
+    background: #F4F4F4;
+  }
+}
+@media (max-width: 768px) {
+  #welfare .welfare-contents ul .mb-w {
+    background: #ffffff;
+  }
 }
 #welfare .welfare-contents ul li {
   width: calc(20% - 2px);
-  padding-bottom: 5rem;
+  padding-bottom: 3.5rem;
   border: 1px solid #EEEEEE;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+@media (max-width: 768px) {
+  #welfare .welfare-contents ul li {
+    width: calc(50% - 1rem);
+    min-height: 24rem;
+  }
 }
 #welfare .welfare-contents ul li div {
   display: flex;
@@ -260,16 +410,34 @@ html {
   margin-top: 3.5rem;
   word-break: keep-all;
 }
+@media (max-width: 768px) {
+  #welfare .welfare-contents ul li div {
+    margin-top: 3.2rem;
+  }
+}
 #welfare .welfare-contents ul li div img {
   width: 6rem;
   height: 6rem;
   margin-bottom: 1.6rem;
+}
+@media (max-width: 768px) {
+  #welfare .welfare-contents ul li div img {
+    width: 3.6rem;
+    height: 3.6rem;
+    margin-bottom: 1rem;
+  }
 }
 #welfare .welfare-contents ul li div span {
   color: #222222;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-size: 2rem;
   font-weight: 900;
+}
+@media (max-width: 768px) {
+  #welfare .welfare-contents ul li div span {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 }
 #welfare .welfare-contents ul li div p {
   color: #656565;
@@ -280,9 +448,14 @@ html {
   line-height: 1.4;
   margin-top: 1.4rem;
 }
+@media (max-width: 768px) {
+  #welfare .welfare-contents ul li div p {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+}
 
 #Recruit {
-  width: 100%;
   position: relative;
   margin: 0 auto;
   background: #F4F4F4;
@@ -303,6 +476,11 @@ html {
   justify-content: center;
   padding-top: 11.5rem;
 }
+@media (max-width: 768px) {
+  #Recruit strong {
+    padding-top: 8rem;
+  }
+}
 #Recruit strong::after {
   content: "";
   display: inline-block;
@@ -317,22 +495,86 @@ html {
   padding: 0 2.4rem;
   margin: 6rem auto;
 }
+@media (max-width: 768px) {
+  #Recruit .process {
+    width: calc(100% - 4rem);
+    padding: 0 2rem;
+    margin: 3.3rem 0 4.5rem 0;
+  }
+}
 #Recruit .process ul {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 4.5rem;
+}
+@media (max-width: 1280px) {
+  #Recruit .process ul {
+    gap: 3rem;
+  }
+}
+@media (max-width: 950px) {
+  #Recruit .process ul {
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  #Recruit .process ul {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+#Recruit .process ul li:nth-of-type(1) div {
+  background-image: url(/assets/images/main/recruit_num_1.png);
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
+}
+#Recruit .process ul li:nth-of-type(2) div {
+  background-image: url(/assets/images/main/recruit_num_2.png);
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
+}
+#Recruit .process ul li:nth-of-type(3) div {
+  background-image: url(/assets/images/main/recruit_num_3.png);
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
+}
+#Recruit .process ul li:nth-of-type(4) div {
+  background-image: url(/assets/images/main/recruit_num_4.png);
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
+}
+#Recruit .process ul li:nth-of-type(5) div {
+  background-image: url(/assets/images/main/recruit_num_5.png);
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
+}
+#Recruit .process ul li:nth-of-type(6) div {
+  background-image: url(/assets/images/main/recruit_num_6.png);
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
 }
 #Recruit .process ul li {
   position: relative;
-  width: 20rem;
+  width: 100%;
   height: 24rem;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+@media (max-width: 950px) {
+  #Recruit .process ul li {
+    height: 22rem;
+  }
+}
+@media (max-width: 768px) {
+  #Recruit .process ul li {
+    height: 10rem;
+  }
+}
 #Recruit .process ul li div {
-  width: 20rem;
+  width: 100%;
   height: 100%;
   border-radius: 0.8rem;
   border: 1px solid #EEEEEE;
@@ -340,6 +582,16 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color: #ffffff;
+  background-size: auto 10.7rem;
+}
+@media (max-width: 768px) {
+  #Recruit .process ul li div {
+    flex-direction: row;
+    justify-content: center;
+    background-size: auto 7.2rem;
+    padding-right: 5rem;
+  }
 }
 #Recruit .process ul li div img {
   width: 6rem;
@@ -347,18 +599,35 @@ html {
   margin-top: 3.8rem;
   margin-bottom: 1.6rem;
 }
-#Recruit .process ul li div span:nth-of-type(1) {
+@media (max-width: 768px) {
+  #Recruit .process ul li div img {
+    margin-right: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+#Recruit .process ul li div p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#Recruit .process ul li div p span:nth-of-type(1) {
   color: #ED1C24;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-size: 1.6rem;
   font-weight: 900;
   margin-bottom: 0.8rem;
 }
-#Recruit .process ul li div span:nth-of-type(2) {
+#Recruit .process ul li div p span:nth-of-type(2) {
   color: #222222;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-size: 2rem;
   font-weight: 900;
+}
+@media (max-width: 768px) {
+  #Recruit .process ul li div p span:nth-of-type(2) {
+    font-size: 1.8rem;
+  }
 }
 #Recruit .process ul li:not(:last-child)::after {
   position: absolute;
@@ -368,6 +637,26 @@ html {
   display: inline-block;
   height: 2.4rem;
   width: 1.2rem;
+}
+@media (max-width: 1280px) {
+  #Recruit .process ul li:not(:last-child)::after {
+    right: -2.2rem;
+  }
+}
+@media (max-width: 950px) {
+  #Recruit .process ul li:not(:last-child)::after {
+    right: -1.7rem;
+  }
+}
+@media (max-width: 768px) {
+  #Recruit .process ul li:not(:last-child)::after {
+    bottom: -2.5rem;
+    right: calc(50% - 2.5rem);
+    transform: translate(-50%, 50%);
+    background: url(../images/main/under.png) no-repeat center/cover;
+    width: 2.4rem;
+    height: 1.2rem;
+  }
 }
 #Recruit button {
   color: #222222;
@@ -381,115 +670,4 @@ html {
   height: 4.4rem;
   margin-bottom: 12rem;
   cursor: pointer;
-}
-
-@media (max-width: 390px) {
-  html {
-    font-size: 10px;
-  }
-  #talent .talent-inner {
-    max-width: 350px;
-    width: calc(100% - 4rem);
-    padding: 0 2rem;
-  }
-  #talent .talent-inner strong {
-    font-size: 2rem;
-  }
-  #talent .talent-inner p {
-    font-size: 1.5rem;
-    margin-bottom: 3.3rem;
-  }
-  #talent .talent-inner .contents {
-    width: 100%;
-    height: 91.6rem;
-    margin-bottom: 6rem;
-  }
-  #talent .talent-inner .contents ul {
-    flex-direction: column;
-  }
-  #talent .talent-inner .contents ul li {
-    width: 100%;
-    height: 22rem;
-  }
-  #talent .talent-inner .contents ul li div {
-    position: relative;
-    flex-direction: column;
-    border-radius: 0.8rem;
-  }
-  #talent .talent-inner .contents ul li div span {
-    padding: 0;
-  }
-  #talent .talent-inner .contents ul li div span:nth-of-type(1) {
-    font-size: 1.8rem;
-  }
-  #talent .talent-inner .contents ul li div span:nth-of-type(2) {
-    font-size: 1.4rem;
-    padding-bottom: 0;
-  }
-  #talent .talent-inner .contents ul li div span:nth-of-type(2)::before {
-    content: none;
-  }
-  #talent .talent-inner .contents ul li div .mb_text {
-    display: block;
-    color: #ffffff;
-    font-family: "Spoqa Han Sans Neo", "sans-serif";
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  #talent .talent-inner .contents ul li:nth-of-type(2) div {
-    margin-top: 0;
-  }
-  #talent .talent-inner .contents ul li:nth-of-type(4) div {
-    margin-top: 0;
-  }
-  #wanted {
-    height: 48rem;
-  }
-  #wanted .wanted-container {
-    max-width: 350px;
-    width: calc(100% - 4rem);
-    padding: 0 2rem;
-  }
-  #wanted .wanted-container strong {
-    font-size: 2.4rem;
-  }
-  #wanted .wanted-container p:nth-of-type(1) {
-    font-size: 2rem;
-    margin-bottom: 4.3rem;
-    text-align: center;
-    margin-bottom: 2.1rem;
-  }
-  #welfare strong {
-    font-size: 2rem;
-    margin-top: 7.5rem;
-    margin-bottom: 3.6rem;
-  }
-  #welfare .welfare-contents {
-    max-width: 350px;
-    width: calc(100% - 4rem);
-    padding: 0 2rem;
-    margin-bottom: 8rem;
-  }
-  #welfare .welfare-contents ul {
-    gap: 1rem;
-  }
-  #welfare .welfare-contents ul li {
-    width: calc(50% - 1rem);
-  }
-  #welfare .welfare-contents ul li div {
-    margin-top: 3.2rem;
-  }
-  #welfare .welfare-contents ul li div img {
-    width: 3.6rem;
-    height: 3.6rem;
-    margin-bottom: 1rem;
-  }
-  #welfare .welfare-contents ul li div span {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-  #welfare .welfare-contents ul li div p {
-    font-size: 1.4rem;
-    margin-top: 0.8rem;
-  }
 }

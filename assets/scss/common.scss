@@ -5,6 +5,12 @@ $red: #ED1C24;
 $spoqa: 'Spoqa Han Sans Neo', 'sans-serif';
 
 
+// @mixin notebook_junction {
+//     @media (max-width: 1350px) {
+//         @content;
+//     }
+// }
+
 // 노트북
 @mixin notebook {
     @media (max-width: 1280px) {
@@ -13,7 +19,7 @@ $spoqa: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
 @mixin tablet_junction{
-    @media (max-width: 900px){
+    @media (max-width: 950px){
         @content;
     }
 }

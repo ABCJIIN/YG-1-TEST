@@ -2,7 +2,8 @@
 
 html {
     font-size: 10px;
-    @include notebook{font-size: 8px;}
+    @media (max-width: 1150px) {font-size: 8px;}
+    @include tablet {font-size: 10px;}
 }
 
 @for $talent from 1 through 4 {
@@ -11,11 +12,14 @@ html {
     }
 }
 
-@for $recruit from 1 through 6 {
-    #Recruit .process ul li:nth-of-type(#{$recruit}) div  {
-        background: $white url(../images/main/recruit_num_#{$recruit}.png) no-repeat 95% 100%;
-    }
-}
+// @for $recruit from 1 through 6 {
+//     #Recruit .process ul li:nth-of-type(#{$recruit}) div  {
+//         background: $white url(../images/main/recruit_num_#{$recruit}.png) no-repeat 95% 100%;
+//         // @include tablet_junction {
+//         //     background-size: 20%; 
+//         // }
+//     }
+// }
 
 @mixin background ($folder: folder_name, $img: file, $type: png, $repeat:no-repeat, $x:0, $y:0) {
     background-image: url(/assets/images/#{$folder}/#{$img}.#{$type});
@@ -46,10 +50,13 @@ html {
 #talent {
     position: relative;
     width: 100%;
-    padding-top: 17.4rem;
+    padding-top: 27.4rem;
     background: $gray;
     z-index: 0;
     overflow: hidden;
+    @include tablet {
+        padding-top: 22rem;
+    }
     .talent-inner {
         max-width: 1440px;
         width: calc(100% - 4.8rem);
@@ -59,77 +66,152 @@ html {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @include tablet {
+            width: calc(100% - 4rem);
+            padding: 0 2rem
+        }
         strong {
             @include main-title;
-            margin-top: 9rem;
             margin-bottom: 2.8rem;
+            @include tablet {
+                font-size: 2rem;
+            }
         }
         strong::after {
             @include bottom-line;
         }
-        p {
+        .title {
             font-family: $spoqa;
             font-weight: 500;
             font-size: 1.6rem;
             color: #393939;
             margin-bottom: 7.5rem;
+            word-break: keep-all;
+            text-align: center;
+            @include tablet {
+                font-size: 1.5rem;
+                margin-bottom: 3.3rem;
+            }
         }
         .contents {
-            width: 122rem;
-            height: 50rem;
+            max-width: 1220px;
+            width: 100%;
             margin-bottom: 10rem;
+            @include tablet {
+                margin-bottom: 6rem;
+            }
             ul {
                 width: 100%;
                 height: 100%;
                 display: flex;
                 flex-direction: row;
                 align-items: flex-start;
-                justify-content: flex-start;
+                justify-content: center;
                 gap: 1.2rem;
+                @include tablet {
+                    flex-direction: column;
+                }
                 li {
                     width: 29.6rem;
-                    height: 42rem;
+                    @include tablet {
+                        width: 100%;
+                        height: auto;
+                    }
                     div {
+                        position: relative;
+                        padding-top: 35.5rem;
                         width: 100%;
                         height: 100%;
+                        margin: 0 auto;
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
                         justify-content: flex-end;
                         gap: 0.6rem;
-                        span {
-                            color: $white;
-                            font-family: $spoqa;
-                            padding-left: 1.6rem;
+                        border-radius: 0.8rem;
+                        word-break: keep-all;
+                        @include tablet_junction {
+                            padding-top: 30rem;
                         }
-                        span:nth-of-type(1) {
-                            font-size: 2rem;
-                            font-weight: 900;
+                        @include tablet {
+                            padding-top: 12.8rem;
+                            gap: 0;
                         }
-                        span:nth-of-type(2) {
-                            font-size: 1.6rem;
-                            font-weight: 500;
-                            padding-bottom: 2rem;
-                        }
-                        span:nth-of-type(2)::before {
-                            content: "";
+                        .sub-title {
+                            position: relative;
                             display: inline-block;
-                            width: 1.2rem;
-                            height: 0.2rem;
-                            background: $red;
-                            margin-bottom: 0.5rem;
-                            margin-right: 0.8rem;
+                            display: flex;
+                            flex-direction: column;
+                            padding-left: 1.5rem;
+                            line-height: 1.5;
+                            @include tablet {
+                                flex-direction: row;
+                                align-items: baseline;
+                                padding-bottom: 1.2rem;
+                            }
+                            span {
+                                color: $white;
+                                font-family: $spoqa;
+                            }
+                            span:nth-of-type(1) {
+                                font-size: 2rem;
+                                font-weight: 900;
+                                @include tablet {
+                                    font-size: 1.8rem;
+                                }
+                            }
+                            span:nth-of-type(2) {
+                                font-size: 1.6rem;
+                                font-weight: 500;
+                                padding-bottom: 2rem;
+                                @include tablet {
+                                    font-size: 1.4rem;
+                                    padding-bottom: 0;
+                                }
+                            }
+                            span:nth-of-type(2)::before {
+                                content: "";
+                                display: inline-block;
+                                width: 1.2rem;
+                                height: 0.2rem;
+                                background: $red;
+                                margin-bottom: 0.5rem;
+                                margin-right: 0.8rem;
+                                @include tablet {
+                                    position: absolute;
+                                    left: 1.7rem;
+                                    bottom: 0;
+                                    width: 0.2rem;
+                                    height: 1.2rem;
+                                    margin: 0;
+                                }
+                            }
                         }
                         .mb_text {
                             display: none;
+                            @include tablet {
+                                display: block;
+                                color: $white;
+                                font-family: $spoqa;
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                                padding: 0 1.5rem 1.5rem 1.5rem;
+                                line-height: 1.5;
+                            }
                         }
                     }
                 }
                 li:nth-of-type(2) div {
                     margin-top: 8rem;
+                    @include tablet {
+                        margin-top: 0;
+                    }
                 }
                 li:nth-of-type(4) div {
                     margin-top: 8rem;
+                    @include tablet {
+                        margin-top: 0;
+                    }
                 }
             }
         }
@@ -138,11 +220,14 @@ html {
 
 #wanted {
     width: 100%;
-    height: 47.1rem;
+    padding: 12rem 0 ;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/main/better_life_bg.png) no-repeat center/cover;
+    @include tablet {
+        padding: 10rem 0;
+    }
     .wanted-container {
         max-width: 1440px;
         width: calc(100% - 4.8rem);
@@ -153,12 +238,21 @@ html {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        word-break: keep-all;
+        text-align: center;
+        @include tablet {
+            width: calc(100% - 4rem);
+            padding: 0 2rem;
+        }
         strong {
             color: $white;
             font-family: $spoqa;
             font-size: 4.8rem;
             font-weight: 900;
             margin-bottom: 1rem;
+            @include tablet {
+                font-size: 2.4rem;
+            }
         }
         p:nth-of-type(1) {
             color: $white;
@@ -166,13 +260,18 @@ html {
             font-size: 2.4rem;
             font-weight: 900;
             margin-bottom: 4.3rem;
+            line-height: 1.5;
+            @include tablet {
+                font-size: 2rem;
+                margin-bottom: 2.1rem;
+                text-align: center;
+            }
         }
         p:nth-of-type(2) {
             color: $white;
             font-family: $spoqa;
             font-size: 1.6rem;
             font-weight: 500;
-            text-align: center;
             line-height: 1.5;
         }
     }
@@ -191,6 +290,10 @@ html {
         @include main-title;
         margin-top: 14rem;
         margin-bottom: 6rem;
+        @include tablet {
+            margin-top: 7.5rem;
+            margin-bottom: 3.6rem;
+        }
     }
     strong::after {
         @include bottom-line
@@ -201,26 +304,53 @@ html {
         padding: 0 2.4rem;
         margin: 0 auto;
         margin-bottom: 23.8rem;
+        @include tablet {
+            width: calc(100% - 4rem);
+            padding: 0 2rem;
+            margin-bottom: 8rem;
+        }
         ul {
             width: 100%;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            li:nth-child(odd) {
+            @include tablet {
+                gap: 1rem;
+            }
+            .web-g {
                 background: #F4F4F4;
             }
-            li:nth-child(even) {
+            .web-w {
                 background: $white;
+            }
+            // li:nth-child(odd) {
+            //     background: #F4F4F4;
+            // }
+            // li:nth-child(even) {
+            //     background: $white;
+            // }
+            .mb-g {
+                @include tablet {
+                    background: #F4F4F4;
+                }
+            }
+            .mb-w {
+                @include tablet {
+                    background: $white;
+                }
             }
             li {
                 width: calc(100% / 5 - 2px);
-                // height: 25rem;
-                padding-bottom: 5rem;
+                padding-bottom: 3.5rem;
                 border: 1px solid #EEEEEE;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
+                @include tablet {
+                    width: calc(50% - 1rem);
+                    min-height: 24rem;
+                }
                 div {
                     display: flex;
                     flex-direction: column;
@@ -228,16 +358,28 @@ html {
                     justify-content: center;
                     margin-top: 3.5rem;
                     word-break: keep-all;
+                    @include tablet {
+                        margin-top: 3.2rem;
+                    }
                     img {
                         width: 6rem;
                         height: 6rem;
                         margin-bottom: 1.6rem;
+                        @include tablet {
+                            width: 3.6rem;
+                            height: 3.6rem;
+                            margin-bottom: 1rem;
+                        }
                     }
                     span {
                         color: #222222;
                         font-family: $spoqa;
                         font-size: 2rem;
                         font-weight: 900;
+                        @include tablet {
+                            font-size: 1.8rem;
+                            text-align: center;
+                        }
                     }
                     p {
                         color: #656565;
@@ -247,6 +389,10 @@ html {
                         text-align: center;
                         line-height: 1.4;
                         margin-top: 1.4rem;
+                        @include tablet {
+                            font-size: 1.4rem;
+                            margin-top: 1rem;
+                        }
                     }
                 }
             }
@@ -255,7 +401,6 @@ html {
 }
 
 #Recruit {
-    width: 100%;
     position: relative;
     margin: 0 auto;
     background: #F4F4F4;
@@ -267,6 +412,9 @@ html {
     strong {
         @include main-title;
         padding-top: 11.5rem;
+        @include tablet {
+            padding-top: 8rem;
+        }
     }
     strong::after {
         @include bottom-line;
@@ -276,20 +424,60 @@ html {
         width: calc(100% - 4.8rem);
         padding: 0 2.4rem;
         margin: 6rem auto;
+        @include tablet {
+            width: calc(100% - 4rem);
+            padding: 0 2rem;
+            margin: 3.3rem 0 4.5rem 0;
+        }
         ul {
             width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            gap: 4.5rem;
+            @include notebook {
+                gap: 3rem;
+            }
+            @include tablet_junction {
+                gap: 2rem;
+            }
+            @include tablet {
+                flex-direction: column;
+                gap: 5rem;
+            }
+            li:nth-of-type(1) div {
+                @include background (main, recruit_num_1, png, no-repeat, 95%, 100%);
+            }
+            li:nth-of-type(2) div {
+                @include background (main, recruit_num_2, png, no-repeat, 95%, 100%);
+            }
+            li:nth-of-type(3) div {
+                @include background (main, recruit_num_3, png, no-repeat, 95%, 100%);
+            }
+            li:nth-of-type(4) div {
+                @include background (main, recruit_num_4, png, no-repeat, 95%, 100%);
+            }
+            li:nth-of-type(5) div {
+                @include background (main, recruit_num_5, png, no-repeat, 95%, 100%);
+            }
+            li:nth-of-type(6) div {
+                @include background (main, recruit_num_6, png, no-repeat, 95%, 100%);
+            }
             li {
                 position: relative;
-                width: 20rem;
+                width: 100%;
                 height: 24rem;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                @include tablet_junction {
+                    height: 22rem;
+                }
+                @include tablet {
+                    height: 10rem;
+                }
                 div {
-                    width: 20rem;
+                    width: 100%;
                     height: 100%;
                     border-radius: 0.8rem;
                     border: 1px solid #EEEEEE;
@@ -297,24 +485,45 @@ html {
                     flex-direction: column;
                     align-items: center;
                     justify-content: flex-start;
+                    background-color: $white;
+                    background-size: auto 10.7rem;
+                    @include tablet {
+                        flex-direction: row;
+                        justify-content: center;
+                        background-size: auto 7.2rem;
+                        padding-right: 5rem;
+                    }
                     img {
                         width: 6rem;
                         height: 6rem;
                         margin-top: 3.8rem;
                         margin-bottom: 1.6rem;
+                        @include tablet {
+                            margin-right: 1.5rem;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                        }
                     }
-                    span:nth-of-type(1) {
-                        color: $red;
-                        font-family: $spoqa;
-                        font-size: 1.6rem;
-                        font-weight: 900;
-                        margin-bottom: 0.8rem;
-                    }
-                    span:nth-of-type(2) {
-                        color: #222222;
-                        font-family: $spoqa;
-                        font-size: 2rem;
-                        font-weight: 900;
+                    p {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        span:nth-of-type(1) {
+                            color: $red;
+                            font-family: $spoqa;
+                            font-size: 1.6rem;
+                            font-weight: 900;
+                            margin-bottom: 0.8rem;
+                        }
+                        span:nth-of-type(2) {
+                            color: #222222;
+                            font-family: $spoqa;
+                            font-size: 2rem;
+                            font-weight: 900;
+                            @include tablet {
+                                font-size: 1.8rem;
+                            }
+                        }
                     }
                 }
             }
@@ -326,6 +535,20 @@ html {
                 display: inline-block;
                 height: 2.4rem;
                 width: 1.2rem;
+                @include notebook {
+                    right: -2.2rem;
+                }
+                @include tablet_junction {
+                    right: -1.7rem;
+                }
+                @include tablet {
+                    bottom: -2.5rem;
+                    right: calc(50% - 2.5rem);
+                    transform: translate(-50%, 50%);
+                    background: url(../images/main/under.png) no-repeat center/cover;
+                    width: 2.4rem;
+                    height: 1.2rem;
+                }
             }
         }
     }
@@ -341,124 +564,5 @@ html {
         height: 4.4rem;
         margin-bottom: 12rem;
         cursor: pointer;
-    }
-}
-
-
-@include mobile {
-
-    html {
-        font-size: 10px;
-    }
-
-    #talent {
-        .talent-inner {
-            max-width: 350px;
-            width: calc(100% - 4rem);
-            padding: 0 2rem;
-            strong {
-                font-size: 2rem;
-            }
-            p {
-                font-size: 1.5rem;
-                margin-bottom: 3.3rem;
-            }
-            .contents {
-                width: 100%;
-                height: 91.6rem;
-                margin-bottom: 6rem;
-                ul {
-                    flex-direction: column;
-                    li {
-                        width: 100%;
-                        height: 22rem;
-                        div {
-                            position: relative;
-                            flex-direction: column;
-                            border-radius: 0.8rem;
-                            span {
-                                padding: 0;
-                            }
-                            span:nth-of-type(1) {
-                                font-size: 1.8rem;
-                            }
-                            span:nth-of-type(2) {
-                                font-size: 1.4rem;
-                                padding-bottom: 0;
-                            }
-                            span:nth-of-type(2)::before {
-                                content: none;
-                            }
-                            .mb_text {
-                                display: block;
-                                color: $white;
-                                font-family: $spoqa;
-                                font-size: 1.2rem;
-                                font-weight: 500;
-                            }
-                        }
-                    }
-                    li:nth-of-type(2) div {
-                        margin-top: 0;
-                    }
-                    li:nth-of-type(4) div {
-                        margin-top: 0;
-                    }
-                }
-            }
-        }
-    }
-    #wanted {
-        height: 48rem;
-        .wanted-container {
-            max-width: 350px;
-            width: calc(100% - 4rem);
-            padding: 0 2rem;
-            strong {
-                font-size: 2.4rem;
-            }
-            p:nth-of-type(1) {
-                font-size: 2rem;
-                margin-bottom: 4.3rem;
-                text-align: center;
-                margin-bottom: 2.1rem;
-            }
-        }
-    }
-    
-    #welfare {
-        strong {
-            font-size: 2rem;
-            margin-top: 7.5rem;
-            margin-bottom: 3.6rem;
-        }
-        .welfare-contents {
-            max-width: 350px;
-            width: calc(100% - 4rem);
-            padding: 0 2rem;
-            margin-bottom: 8rem;
-            ul {
-                gap: 1rem;
-                li {
-                    width: calc(50% - 1rem);
-                    div {
-                    margin-top: 3.2rem;
-                    img {
-                        width: 3.6rem;
-                        height: 3.6rem;
-                        margin-bottom: 1rem;
-                    }
-                    span {
-                        font-size: 1.8rem;
-                        text-align: center;
-                    }
-                    p {
-                        font-size: 1.4rem;
-                        margin-top: 0.8rem;
-                    }
-                    }
-                }
-            }
-        }
     }
 }
