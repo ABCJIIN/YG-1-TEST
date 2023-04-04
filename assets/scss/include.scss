@@ -270,25 +270,24 @@
 .footer-inner {
     position: relative;
     width: 100%;
-    // height: 60.2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
-    .left-wrap {
-        position: relative;
-        width: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/include/footer_bg.png) no-repeat top/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/include/footer_bg.png) no-repeat;
+    background-color: $black;
+    background-size: 60% 100%;
+    background-position: left top;
+    .inner-wrap {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: calc(100% - 4.8rem);
+        padding: 2rem 2.4rem 0 2.4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
         .inner-left {
-            width: calc(100% - 4.8rem);
-            max-width: 1440px;
-            padding: 0 2.4rem;
-            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
             justify-content: flex-start;
+            align-items: flex-start;
             strong {
                 color: $white;
                 font-family: $spoqa;
@@ -297,7 +296,6 @@
                 line-height: 1.4;
                 border-bottom: 1px solid #656565;
                 padding-bottom: 1.5rem;
-                padding-top: 2rem;
             }
             span {
                 color: $white;
@@ -318,14 +316,14 @@
                     align-items: center;
                     justify-content: flex-start;
                     margin-bottom: 0.8rem;
-                }
-                p::before {
+                    &::before {
                     content: "";
                     display: inline-block;
                     background: url(../images/include/address_icon_1.png) no-repeat center/contain;
                     width: 2.4rem;
                     height: 2.4rem;
                     margin-right: 0.8rem;
+                    }
                 }
                 a {
                     color: $white;
@@ -336,14 +334,14 @@
                     flex-direction: row;
                     align-items: center;
                     justify-content: flex-start;
-                }
-                a::before {
+                    &::before {
                     content: "";
                     display: inline-block;
                     background: url(../images/include/address_icon_2.png) no-repeat center/contain;
                     width: 2.4rem;
                     height: 2.4rem;
                     margin-right: 0.8rem;
+                    }
                 }
             }
             .copyright {
@@ -356,23 +354,11 @@
                 color: #656565;
             }
         }
-    }
-    .right-wrap {
-        position: absolute;
-        right: 0;
-        height: 100%;
-        display: flex;
-        justify-content: flex-end;
         .inner-right {
-            height: 100%;
-            background: $black;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
             justify-content: flex-start;
-            width: calc(100% - 4.8rem);
-            padding: 0 2.4rem;
-            max-width: 764px;
+            align-items: flex-start;
             .link {
                 width: 38.5rem;
                 display: flex;
@@ -381,7 +367,7 @@
                 justify-content: flex-start;
                 flex-wrap: wrap;
                 gap: 1.5rem 0;
-                margin: 2rem 0 6rem 9.5rem;
+                margin-bottom: 6rem;
                 li {
                     width: 50%;
                     a {
@@ -397,7 +383,6 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: flex-start;
-                margin-left: 9.5rem;
                 gap: 1.2rem;
                 li {
                     button {
@@ -434,16 +419,13 @@
             }
             .subscribe {
                 position: relative;
-                // width: 74.7rem;
-                margin-left: 9.5rem;
                 margin-top: 7rem;
                 label {
                     color: $white;
                     font-size: 1.6rem;
                     font-weight: 900;
                     font-family: $spoqa;
-                }
-                label::before {
+                    &::before {
                     position: absolute;
                     left: -0.7rem;
                     content: "";
@@ -451,11 +433,14 @@
                     background: url(../images/include/text_deco.png) no-repeat center/contain;
                     width: 2.1rem;
                     height: 1.7rem;
+                    }
                 }
                 form {
-                    position: relative;
                     margin-top: 1.6rem;
-                    width: 40.5rem;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
                     input {
                         width: 31rem;
                         background: #222222;
@@ -466,13 +451,11 @@
                         font-family: $spoqa;
                         font-size: 1.6rem;
                         font-weight: 500;
-                    }
-                    input::placeholder {
-                        color: #656565;
+                        &::placeholder {
+                            color: #656565;
+                        }
                     }
                     button {
-                        position: absolute;
-                        right: 0;
                         width: 9.5rem;
                         height: 4.7rem;
                         cursor: pointer;

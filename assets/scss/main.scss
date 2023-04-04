@@ -376,9 +376,9 @@ html {
                         font-family: $spoqa;
                         font-size: 2rem;
                         font-weight: 900;
+                        text-align: center;
                         @include tablet {
                             font-size: 1.8rem;
-                            text-align: center;
                         }
                     }
                     p {

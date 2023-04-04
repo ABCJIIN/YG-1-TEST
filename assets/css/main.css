@@ -432,11 +432,11 @@ html {
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-size: 2rem;
   font-weight: 900;
+  text-align: center;
 }
 @media (max-width: 768px) {
   #welfare .welfare-contents ul li div span {
     font-size: 1.8rem;
-    text-align: center;
   }
 }
 #welfare .welfare-contents ul li div p {
