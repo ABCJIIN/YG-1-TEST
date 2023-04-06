@@ -6,11 +6,11 @@ html {
     @include tablet {font-size: 10px;}
 }
 
-@for $talent from 1 through 4 {
-    #talent .talent-inner .contents ul li:nth-of-type(#{$talent}) div {
-        background : url(../images/main/talent_#{$talent}.png) no-repeat center/cover;
-    }
-}
+// @for $talent from 1 through 4 {
+//     #talent .talent-inner .contents ul li:nth-of-type(#{$talent}) div {
+//         background : url(../images/main/talent_#{$talent}.png) no-repeat center/cover;
+//     }
+// }
 
 // @for $recruit from 1 through 6 {
 //     #Recruit .process ul li:nth-of-type(#{$recruit}) div  {
@@ -111,6 +111,30 @@ html {
                 @include tablet {
                     flex-direction: column;
                 }
+                li:nth-of-type(1) div {
+                    background: url(../images/main/talent_1.png) no-repeat center/cover;
+                    &:hover {
+                        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/main/talent_1.png) no-repeat center/cover;
+                    }
+                }
+                li:nth-of-type(2) div {
+                    background: url(../images/main/talent_2.png) no-repeat center/cover;
+                    &:hover {
+                        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/main/talent_2.png) no-repeat center/cover;
+                    }
+                }
+                li:nth-of-type(3) div {
+                    background: url(../images/main/talent_3.png) no-repeat center/cover;
+                    &:hover {
+                        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/main/talent_3.png) no-repeat center/cover;
+                    }
+                }
+                li:nth-of-type(4) div {
+                    background: url(../images/main/talent_4.png) no-repeat center/cover;
+                    &:hover {
+                        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/main/talent_4.png) no-repeat center/cover;
+                    }
+                }
                 li {
                     width: 29.6rem;
                     @include tablet {
@@ -119,7 +143,7 @@ html {
                     }
                     div {
                         position: relative;
-                        padding-top: 35.5rem;
+                        padding-top: 42rem;
                         width: 100%;
                         height: 100%;
                         margin: 0 auto;
@@ -130,6 +154,32 @@ html {
                         gap: 0.6rem;
                         border-radius: 0.8rem;
                         word-break: keep-all;
+                        &:hover .sub-title {
+                            position: absolute;
+                            top: 10%;
+                            left: 50%;
+                            transform: translate(-50%, 100%);
+                            padding: 0;
+                            text-align: center;
+                        }
+                        &:hover .mb_text {
+                            display: block;
+                            position: absolute;
+                            top: 52%;
+                            color: #c9c9c9;
+                            font-family: $spoqa;
+                            font-size: 1.6rem;
+                            text-align: center;
+                            padding: 0 2rem;
+                            line-height: 1.5;
+                        }
+                        &:hover .sub-title span:nth-of-type(2)::before {
+                            position: absolute;
+                            bottom: -20%;
+                            left: 50%;
+                            width: 2px;
+                            height: 20px;
+                        }
                         @include tablet_junction {
                             padding-top: 30rem;
                         }
@@ -138,7 +188,7 @@ html {
                             gap: 0;
                         }
                         .sub-title {
-                            position: relative;
+                            position: absolute;
                             display: inline-block;
                             display: flex;
                             flex-direction: column;
@@ -240,6 +290,7 @@ html {
         align-items: center;
         word-break: keep-all;
         text-align: center;
+        opacity: 0;
         @include tablet {
             width: calc(100% - 4rem);
             padding: 0 2rem;
@@ -299,6 +350,7 @@ html {
         @include bottom-line
     }
     .welfare-contents {
+        opacity: 0;
         max-width: 1440px;
         width: calc(100% - 4.8rem);
         padding: 0 2.4rem;
@@ -317,29 +369,31 @@ html {
             @include tablet {
                 gap: 1rem;
             }
-            .web-g {
-                background: #F4F4F4;
-            }
-            .web-w {
-                background: $white;
-            }
+            // .web-g {
+            //     background: #F4F4F4;
+            // }
+            // .web-w {
+            //     background: $white;
+            // }
             // li:nth-child(odd) {
             //     background: #F4F4F4;
             // }
             // li:nth-child(even) {
             //     background: $white;
             // }
-            .mb-g {
-                @include tablet {
-                    background: #F4F4F4;
-                }
-            }
-            .mb-w {
-                @include tablet {
-                    background: $white;
-                }
-            }
+            // .mb-g {
+            //     @include tablet {
+            //         background: #F4F4F4;
+            //     }
+            // }
+            // .mb-w {
+            //     @include tablet {
+            //         background: $white;
+            //     }
+            // }
             li {
+                &:nth-child(even){background: $white;}
+                &:nth-child(odd){background: #f4f4f4;}
                 width: calc(100% / 5 - 2px);
                 padding-bottom: 3.5rem;
                 border: 1px solid #EEEEEE;

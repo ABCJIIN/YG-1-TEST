@@ -13,7 +13,23 @@
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/include.css">
     <link rel="stylesheet" href="../assets/css/main.css">
-
+    <link rel="stylesheet" href="../assets/css/animate.css">
+<script>
+    $(document).ready(function() {
+        $(window).scroll( function(){
+            $('.wanted-container , .welfare-contents').each( function(i){
+                
+                var bottom_of_element = $(this).offset().top + $(this).outerHeight()/2;
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                
+                if( bottom_of_window > bottom_of_element ){
+                    $(this).animate({'opacity':'1'},700);
+                }
+                
+            }); 
+        });
+    });
+</script>
 </head>
 <body>
     <header id="header"></header>
@@ -23,7 +39,7 @@
             <p class="title">YG-1과 함께 내일을 만들어갈 인재를 기다립니다.</p>
             <div class="contents">
                 <ul>
-                    <li>
+                    <li class="animate__animated animate__fadeInUp">
                         <div>
                             <p class="sub-title">
                                 <span>창조적인 인재</span>
@@ -33,7 +49,7 @@
                                 새로운 방법을 탐구하여 최상의 가치를 창출하는 인재</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="animate__animated animate__fadeInUp">
                         <div>
                             <p class="sub-title">
                                 <span>도전적인 인재</span>
@@ -43,7 +59,7 @@
                                 선도하며 실패를 두려워하지 않으며, 열정적으로 책임을 완수하는 인재</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="animate__animated animate__fadeInUp">
                         <div>
                             <p class="sub-title">
                                 <span>소통하는 인재</span>
@@ -54,7 +70,7 @@
                                 배려하는 인재</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="animate__animated animate__fadeInUp">
                         <div>
                             <p class="sub-title">
                                 <span>글로벌 인재</span>
@@ -82,7 +98,7 @@
         <strong>복리후생</strong>
         <div class="welfare-contents">
             <ul>
-                <li class="web-g mb-g">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_1.png" alt="포상 픽토그램">
                         <span>포상</span>
@@ -90,7 +106,7 @@
                             제안포상 등</p>
                     </div>
                 </li>
-                <li class="web-w mb-w">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_2.png" alt="기숙사 운영 픽토그램">
                         <span>기숙사 운영</span>
@@ -99,21 +115,21 @@
                             사외 기숙사 : 안산, 충주 등</p>
                     </div>
                 </li>
-                <li class="web-g mb-w">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_3.png" alt="휴가 픽토그램">
                         <span>휴가</span>
                         <p>하계휴가, 연차휴가</p>
                     </div>
                 </li>
-                <li class="web-w mb-g">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_4.png" alt="통근 버스 운행 픽토그램">
                         <span>통근 버스 운행</span>
                         <p>본사(인천), 안산, 광주, 충주</p>
                     </div>
                 </li>
-                <li class="web-g mb-g">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_5.png" alt="사내 서클 활동 픽토그램">
                         <span>사내 서클 활동</span>
@@ -123,7 +139,7 @@
                             활동 (봉사, 산악, 축구 등)</p>
                     </div>
                 </li>
-                <li class="web-w mb-w">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_6.png" alt="사내 식당 위탁 운영 픽토그램">
                         <span>사내 식당 위탁 운영</span>
@@ -132,7 +148,7 @@
                             (매월 1회, 일일 야간자 특식 제공)</p>
                     </div>
                 </li>
-                <li class="web-g mb-w">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_7.png" alt="체육시설 및 휴식공간 픽토그램">
                         <span>체육시설 및 휴식공간</span>
@@ -141,7 +157,7 @@
                             옥상가든 : YG-1 가든 설치 운영</p>
                     </div>
                 </li>
-                <li class="web-w mb-g">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_8.png" alt="사우회/경조회 픽토그램">
                         <span>사우회/경조회</span>
@@ -149,7 +165,7 @@
                             직원 경조회 운영 - 경조금 지급</p>
                     </div>
                 </li>
-                <li class="web-g mb-g">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_9.png" alt="경조금 및 휴가 픽토그램">
                         <span>경조금 및 휴가</span>
@@ -157,7 +173,7 @@
                             (결혼, 출산, 칠순, 조의)</p>
                     </div>
                 </li>
-                <li class="web-w mb-w">
+                <li>
                     <div>
                         <img src="../assets/images/main/welfare_icon_8.png" alt="협약기관 픽토그램">
                         <span>협약기관</span>
@@ -173,7 +189,7 @@
         <strong>채용절차</strong>
         <div class="process">
             <ul>
-                <li>
+                <li class="animate__animated animate__fadeIn">
                     <div>
                         <img src="../assets/images/main/recruit_icon_1.png" alt="인사지원 픽토그램">
                         <p>
@@ -182,7 +198,7 @@
                         </p>
                     </div>
                 </li>
-                <li>
+                <li class="animate__animated animate__fadeIn">
                     <div>
                         <img src="../assets/images/main/recruit_icon_2.png" alt="서류 전형 픽토그램">
                         <p>
@@ -191,7 +207,7 @@
                         </p>
                     </div>
                 </li>
-                <li>
+                <li class="animate__animated animate__fadeIn">
                     <div>
                         <img src="../assets/images/main/recruit_icon_3.png" alt="실무자 면접 픽토그램">
                         <p>
@@ -200,7 +216,7 @@
                         </p>
                     </div>
                 </li>
-                <li>
+                <li class="animate__animated animate__fadeIn">
                     <div>
                         <img src="../assets/images/main/recruit_icon_4.png" alt="임원 면접 픽토그램">
                         <p>
@@ -209,7 +225,7 @@
                         </p>
                     </div>
                 </li>
-                <li>
+                <li  class="animate__animated animate__fadeIn">
                     <div>
                         <img src="../assets/images/main/recruit_icon_5.png" alt="신체 검사 픽토그램">
                         <p>
@@ -218,7 +234,7 @@
                         </p>
                     </div>
                 </li>
-                <li>
+                <li class="animate__animated animate__fadeIn">
                     <div>
                         <img src="../assets/images/main/recruit_icon_6.png" alt="최종합격 픽토그램">
                         <p>
